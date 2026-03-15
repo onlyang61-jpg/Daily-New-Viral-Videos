@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Watch Video</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{margin:0;background:black;color:white;text-align:center;font-family:Arial}
+button{padding:12px 20px;font-size:18px;background:red;color:white;border:none;border-radius:6px;margin-top:30px}
+</style>
+</head>
+<body>
+
+<h2>Watch Full Video</h2>
+
+<button onclick="openVideo()">Watch Now</button>
+
+<script>
+function openVideo(){
+window.open("PASTE_YOUR_ADSTERRA_SMARTLINK_HERE")
+const params = new URLSearchParams(window.location.search)
+let video = params.get("video")
+setTimeout(()=>{
+window.location = video
+},3000)
+}
+</script>
+
+</body>
+</html>
