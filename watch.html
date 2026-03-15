@@ -1,29 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Watch Video</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
-body{margin:0;background:black;color:white;text-align:center;font-family:Arial}
-button{padding:12px 20px;font-size:18px;background:red;color:white;border:none;border-radius:6px;margin-top:30px}
+
+body{
+margin:0;
+background:#000;
+color:white;
+text-align:center;
+font-family:Arial;
+}
+
+video{
+width:95%;
+margin-top:20px;
+border-radius:8px;
+}
+
 </style>
+
 </head>
+
 <body>
 
-<h2>Watch Full Video</h2>
+<h2>Watch Video</h2>
 
-<button onclick="openVideo()">Watch Now</button>
+<video controls id="player">
+<source id="source" src="" type="video/mp4">
+</video>
 
 <script>
-function openVideo(){
-window.open("PASTE_YOUR_ADSTERRA_SMARTLINK_HERE")
+
 const params = new URLSearchParams(window.location.search)
+
 let video = params.get("video")
-setTimeout(()=>{
-window.location = video
-},3000)
-}
+
+document.getElementById("source").src = video
+
+document.getElementById("player").load()
+
 </script>
 
 </body>
+
 </html>
